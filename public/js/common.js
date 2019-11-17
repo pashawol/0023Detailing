@@ -288,6 +288,160 @@ function eventHandler() {
 		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
 		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
 	});
+	var scriptMap = document.createElement('script');
+	scriptMap.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCnoRp8wBQeCZLL8k4R-vckP_wDGVR2k10&callback=initMap';
+	document.body.append(scriptMap);
+	var map;
+
+	function initMap() {
+		map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 15,
+			//- center: new google.maps.LatLng(53.98205856875258,88.80421049999992),
+			center: new google.maps.LatLng(51.82294807220123, 55.095),
+			mapTypeId: 'roadmap',
+			styles: [{
+				"featureType": "all",
+				"elementType": "labels.text.fill",
+				"stylers": [{
+					"saturation": 36
+				}, {
+					"color": "#000000"
+				}, {
+					"lightness": 40
+				}]
+			}, {
+				"featureType": "all",
+				"elementType": "labels.text.stroke",
+				"stylers": [{
+					"visibility": "on"
+				}, {
+					"color": "#000000"
+				}, {
+					"lightness": 16
+				}]
+			}, {
+				"featureType": "all",
+				"elementType": "labels.icon",
+				"stylers": [{
+					"visibility": "off"
+				}]
+			}, {
+				"featureType": "administrative",
+				"elementType": "geometry.fill",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 20
+				}]
+			}, {
+				"featureType": "administrative",
+				"elementType": "geometry.stroke",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 17
+				}, {
+					"weight": 1.2
+				}]
+			}, {
+				"featureType": "landscape",
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 20
+				}]
+			}, {
+				"featureType": "poi",
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 21
+				}]
+			}, {
+				"featureType": "road.highway",
+				"elementType": "geometry.fill",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 17
+				}]
+			}, {
+				"featureType": "road.highway",
+				"elementType": "geometry.stroke",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 29
+				}, {
+					"weight": 0.2
+				}]
+			}, {
+				"featureType": "road.arterial",
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 18
+				}]
+			}, {
+				"featureType": "road.local",
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 16
+				}]
+			}, {
+				"featureType": "transit",
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 19
+				}]
+			}, {
+				"featureType": "water",
+				"elementType": "geometry",
+				"stylers": [{
+					"color": "#000000"
+				}, {
+					"lightness": 17
+				}]
+			}]
+		});
+		var iconBase = 'img/@2x/mark.png';
+		var icons = {
+			info: {
+				icon: iconBase
+			}
+		};
+		var features = [{
+			position: new google.maps.LatLng(51.82294807220123, 55.09849149999999),
+			type: 'info',
+			title: 'Россия, Оренбург, Шоссейная улица, 24'
+		} //- {
+		//- position: new google.maps.LatLng(54.999397069703306,82.95985649999986),
+		//- type: 'info',
+		//- title: 'г. Новосибирск',
+		//- },  
+		]; // Create markers.
+
+		features.forEach(function (feature) {
+			var marker = new google.maps.Marker({
+				position: feature.position,
+				icon: icons[feature.type].icon,
+				map: map,
+				title: feature.title //- title: title
+
+			});
+		});
+	}
+
+	setTimeout(function () {
+		initMap();
+	}, 3000);
 }
 
 ;

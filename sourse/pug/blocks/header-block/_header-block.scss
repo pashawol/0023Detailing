@@ -1,7 +1,100 @@
 .header-block {
-	display: block;
- 
-	
+	background-color: $body-color;
+	text-align: center;
+	// display: flex;
+	// flex-direction: column;
+	display: table;
+	width: 100%;
+	@include media-breakpoint-up(md) {
+
+		min-height: 100vh;
+	}
+	min-height: calc(100vh - 50px);
+	&__inner{
+		display: table-cell;
+		vertical-align: middle;
+		padding-top: rem(40);
+		padding-bottom: rem(40);
+		position: relative;
+	}
+	&__text-animate{
+
+		font-family: "Text Book";
+		// font-size: 214px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #ffffff;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		-webkit-background-clip:text;
+		-webkit-text-fill-color: transparent;
+	}
+	&__title{
+		// @include rfs(rem(214));
+		@include media-breakpoint-up(xxl) {
+
+			font-size: rem(214);
+		}
+		font-size: calc(2.31389rem + 8.1457vw);
+		line-height: 0.8;
+		margin-bottom: rem(15);
+	}
+	&__sub{
+		line-height: 1.2;
+		@include rfs(rem(64)); 
+		margin-bottom: rem(37);
+	}
+	&__text{
+		color: #c3c2c9; 
+		font-weight: 400;
+		line-height: 1.78;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: rem(600);
+	}
+	&__scroll-down{
+		cursor: pointer;
+		position: relative;
+		// @include a-cent(x);
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		@include media-breakpoint-up(xxl) {
+
+			bottom: rem(80);
+		}
+		bottom: rem(40);
+		@include mt;
+		&:hover{
+			transform: translateX(-50%) translateY(10px);
+			// margin-top: rem(10);
+
+		}
+		.icon{
+			color: #ffffff;
+			font-size: rem(24);
+		}
+	}
+
+	&__logo{
+		padding-left: 15px;
+		padding-right: 15px;
+		@include media-breakpoint-up(md) {
+			
+			@include a-cent(x);
+			top: rem(20);
+		}
+		margin-bottom: rem(30);
+		img{
+			max-width: 100%;
+			height: auto;
+									@include media-breakpoint-up(md) {
+			width: rem(100);
+			height: rem(100);
+									}
+		}
+	}
 	// 
 	@include media-breakpoint-up(xl) {}
 
@@ -32,9 +125,25 @@
 
 	@include media-breakpoint-down(lg) {}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {
+		background-image: url(../img/@2x/header-bg.jpg);
+		background-size: cover;
+		animation:move-background 70s linear infinite;
+	}
+
+
 
 	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {}
+}
+
+@keyframes move-background {
+  from {
+		background-position-x: -100%;
+	}
+	to { 
+		background-position-x: 100%;
+		// -webkit-transform: translate3d(1000px, 0px, 0px);
+	}
 }

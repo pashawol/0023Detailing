@@ -1,0 +1,5 @@
+JSCCommons-promocode();
+	s-promocode() {
+
+	}
+	

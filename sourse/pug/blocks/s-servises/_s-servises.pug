@@ -1,0 +1,17 @@
+mixin s-servises()
+	// start s-servises
+	+b.SECTION.s-servises.section#s-servises&attributes(attributes)
+		.container
+			+b.section-title
+				h2 основные 
+					span.text-primary услуги
+				
+			-
+				var nav= ["полировка кузова","нанесение керамики","химчистка салона","антигравийная защита","РЕМОНТ ВМЯТИН БЕЗ ПОКРАСКИ","тонировка","ремонт стекол","ПРЕДПРОДАЖНАЯ ПОДГОТОВКА"] 
+			.row
+				each title in nav
+					+e.col.col-xl-3.col-md-4.col-6(href=`#`)
+						+e.img-wrap.bg-wrap
+							+pic(`servises-${(nav.indexOf(title) + 1)}.jpg`,'bg')(class="picture-bg")
+						+e.title= title
+	// end s-servises

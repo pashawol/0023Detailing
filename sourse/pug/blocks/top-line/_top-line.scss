@@ -1,5 +1,110 @@
 .top-line {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 1001;
+  text-align: center;
+  font-family: "Text Book";
+  @include mt;
+  @include media-breakpoint-up(xxl) {
 
+    margin-top: rem(60);
+  }
+  @include media-breakpoint-up(md) {
+
+    margin-top: rem(40);
+    padding-top: 0;
+  }
+  padding-top: rem(5);
+  padding-bottom: rem(5);
+  .row{
+    align-items: center;
+    @include media-breakpoint-up(xl) {
+
+      justify-content: flex-end;
+    }
+    justify-content: space-between;
+  }
+
+  .link-tel{
+    // color: #ffffff !important;
+    font-size: $small;
+    font-weight: 700;
+    line-height: 2.63;
+    text-transform: uppercase; 
+    letter-spacing: rem(1.28px);
+    text-decoration: none !important;
+    @include media-breakpoint-down(sm) {
+      // text-indent: 1000px;
+      // font-size: 0;
+      span{
+        display: none;
+      }
+      .icon{
+        // display: block;
+        display: inline-block;
+      }
+    }
+    .icon{
+      font-size: 15px;
+      display: none;
+    }
+  }
+  &__btn{
+    @extend .btn;
+    @extend .btn-outline-primary;
+    width: rem(210);
+  }
+
+ 
+  // a{
+  //   color: $body-color !important;
+  // }
+    a{
+      color: #ffffff !important;
+    }
+  &.background--light {
+    @include media-breakpoint-up(md) {
+    a{
+
+        color: $body-color !important;
+      }
+      .toggle-menu-mobile{
+        span,
+        span::before,
+        span::after{
+          background-color: $body-color;
+        }
+      }
+    }
+  }
+ 
+  
+  &.background--primary {
+    @include media-breakpoint-up(md) {
+    a{
+
+        color: $body-color !important;
+      }
+      .top-line__btn{
+        border: 2px solid #ffffff !important;
+        &:hover{
+          // border: 2px solid #ffffff;
+          background-color: #ffffff;
+        }
+      }
+      .toggle-menu-mobile{
+        span,
+        span::before,
+        span::after{
+          background-color: $body-color;
+        }
+      }
+    }
+  }
+ 
+  
 	
 // 
 @include media-breakpoint-up(xl) {}
@@ -33,7 +138,15 @@
 
 @include media-breakpoint-down(md) {}
 
-@include media-breakpoint-down(sm) {}
+@include media-breakpoint-down(sm) {
+  &.fixed{
+    background-color:  $body-color;
+  }
+}
 
 @include media-breakpoint-down(xs) {}
+}
+
+.fixed .fixed{
+  background-color: transparent;
 }

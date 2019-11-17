@@ -1,0 +1,30 @@
+mixin s-best()
+	// start s-best
+	+b.SECTION.s-best.section.bg--dark.bg-wrap.lazy-background#s-best&attributes(attributes)
+		.video-fallback.d-none.d-md-block
+		.video-container.d-none.d-md-block
+			video#bgvid.fillItUp.video(data-poster='img/header-bg.jpg', playsinline='playsinline', autoplay='autoplay', muted='muted', loop='loop')
+				source(src="#" data-src='video/video.mp4', type='video/mp4')
+				source(src="#" data-src='video/video.ogv', type='video/ogv')
+				source(src="#" data-src='video/video.webm', type='video/webm')
+		.container
+			.row
+				.col-md-6
+					+b.section-title
+						h2 
+							span.text-primary лучшие 
+							| в&nbsp;своем деле
+					.d-none.d-md-block
+						+e.text  Сертификат соответствия PCK.RU.0001.P392289
+						+e.btn(href="#") открыть сертификат
+				.col
+					+e.text-wrap
+						p Закончились месяцы подготовки, обучения, замеров и&nbsp;теперь наши услуги полностью соответствуют гос. стандартам и&nbsp;требованиям заводов изготавителей авто. Brooklyn стал единственным сертифицированным детейлинг центром в&nbsp;Оренбурге.
+
+						p 
+							strong Сертифицированный детейлинг центр Brooklyn, доверяйте свой автомобиль официальным центрам.
+					.d-md-none.text-center
+						+e.text  Сертификат соответствия PCK.RU.0001.P392289
+						+e.btn(href="#") открыть сертификат
+					
+	// end s-best

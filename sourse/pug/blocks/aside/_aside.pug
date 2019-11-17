@@ -1,0 +1,17 @@
+mixin aside()
+	// start aside
+	+b.ASIDE.aside--js
+		+e.inner
+			//- +b.toggle-menu-mobile--js.d-xl-none
+			//- 	span
+			+e.logo.d-none.d-xl-block
+				a(href="/")
+					img(src="img/@2x/logo.png", alt="")
+			
+			+mnu
+			+e.instagram-link(href="#") 
+				+icon('instagram')
+			+e.copy все права защищены
+				br
+				| © brooklyn56.ru
+	// end aside

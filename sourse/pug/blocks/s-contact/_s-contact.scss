@@ -1,5 +1,77 @@
 .s-contact {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	.container{
+		position: relative;
+	}
+	// padding: 0 !important;
+	// height: 2000px;
 	//
+	&__block{
+		@include media-breakpoint-up(xxl) {
+			
+			left: 30px;
+		}
+		
+		@include media-breakpoint-up(xxl) {
+			padding: rem(88) rem(98) rem(98);
+			padding-right: rem(20);
+			width: rem(653);
+			
+		}
+		@include media-breakpoint-up(xl) {
+			
+			left: 15px;
+			top: rem(100);
+			z-index: 4;
+			position: absolute;
+			background-color: #ffffff;
+			padding: rem(88 * .8) rem(98 * .5) rem(98 * .8);
+			padding-right: rem(20);
+			width: rem(653 * .9);
+			text-align: left;
+		}
+		text-align: center;
+		padding-top: rem(100);
+		padding-bottom: rem(100);
+		h2{
+			padding-bottom: rem(27);
+			font-family: "Text Book";
+		}
+		p{
+			@include rfs(rem(26));
+			margin-bottom: rem(40);
+		}
+	}
+	#map{
+		@include media-breakpoint-up(md) {
+
+			height: rem(750);
+		}
+		height: rem(500);
+	}
+	.link-tel{
+		@extend .h2;
+		font-weight: bold;
+		font-family: "Text Book";
+		text-decoration: none !important;
+		display: inline-block;
+		margin-bottom: em(15);
+	}
+	&__btn{
+		@extend .btn;
+		display: block;
+		@extend .btn-lg;
+		@extend .btn-outline-primary;
+		width: rem(236);
+		color: $body-color;
+		@include media-breakpoint-up(xl) {
+			margin-left: 0;
+		}
+		margin-left: auto;
+		margin-right: auto;
+
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -23,5 +95,7 @@
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
+	position: relative;
+	z-index: 2;
 
 }

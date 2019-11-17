@@ -1,20 +1,20 @@
 // мобильное меню
 
 // мобильное меню
-$h: em(2);
+$h: 2px;
 
 .toggle-menu-mobile {
 	display: block;
 	height: $h* 14;
-	margin-top: 15px;
+	// margin-top: 15px;
 	margin-left: 0;
-	position: fixed;
+	position: relative;
 	z-index: 999 !important;
-	right: 0;
+	// right: 0;
 	padding: 3px;
-	border-radius: 5px;
+	// border-radius: 5px;
 	top: $h;
-
+	cursor: pointer;
 
 	span:after,
 	span:before {
@@ -28,10 +28,10 @@ $h: em(2);
 	span:before {
 
 		
-		top: $h * 2;
+		top: $h * 4;
 	}
 	span:after {
-		bottom: $h * 2;
+		bottom: $h * 4;
 	}
 
 	span {
@@ -42,11 +42,10 @@ $h: em(2);
 	span,
 	span:after,
 	span:before {
-		// width: 32px;
-		font-size: 32px;
-		width: 1em;
-		height: $h;
-		background-color: $primary;
+ 
+		width: 24px;
+		height: 2px;
+		background-color: #fff;
 		transition: all 0.3s;
 		backface-visibility: hidden;
 		border-radius: 6px;
@@ -65,6 +64,7 @@ $h: em(2);
 		bottom: 0;
 		transform: rotate(45deg) ;
 		transform-origin: 50% 50%;
+		background-color: #ffffff !important;
 	}
 
 	&.on span:after {
@@ -72,8 +72,10 @@ $h: em(2);
 		bottom: 0;
 		transform: rotate(-45deg) ;
 		transform-origin: 50% 50%;
+		background-color: #ffffff !important;
 	}
 }
+
 
 .menu-mobile {
 	position: fixed !important;

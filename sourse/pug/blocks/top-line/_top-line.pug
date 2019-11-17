@@ -1,6 +1,17 @@
 mixin top-line()
 	// start .top-line
-	+b.top-line.block-with-lazy
+	+b.top-line
 		.container
-			.row top-line
+			.row
+				.col-md-auto.col-3.d-xl-none
+					+b.toggle-menu-mobile--js
+						span
+				+e.logo.col.d-md-none
+					a(href="/")
+						img(src="img/@2x/korona.png", alt="")
+				.text-right.col-md-auto.col-3
+					+link-tel()
+						+icon("call-answer")
+				.col-auto.d-none.d-xl-block
+					+e.btn(href="#") заказать звонок
 	// end .top-line

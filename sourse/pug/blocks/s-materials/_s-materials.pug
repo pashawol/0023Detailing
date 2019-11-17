@@ -1,0 +1,12 @@
+mixin s-materials()
+	// start s-materials
+	+b.SECTION.s-materials.section#s-materials&attributes(attributes)
+		.container
+			+b.section-title
+					h2 ПРОФЕССИОНАЛЬНЫЕ 
+						span.text-primary МАТЕРИАЛЫ
+			.row
+				- for (var x = 1; x <= 15; x++)
+					+e.col.col-6
+						img.res-i.lazy(src="#" data-src=`img/@2x/logo-${x}.png`, alt="") 
+	// end s-materials

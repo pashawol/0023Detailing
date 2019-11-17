@@ -1,0 +1,16 @@
+mixin s-promocode()
+	// start s-promocode
+	+b.SECTION.s-promocode.section#s-promocode&attributes(attributes)
+		+pic("brook.png")(class="s-promocode__img-text")
+		+e.stock -10%
+		.container
+			+e.block
+				+b.section-title
+					h2 промокод 
+						span.text-white brook
+				p До&nbsp;31&nbsp;ноября 2019 по&nbsp;промокоду &laquo;BROOK&raquo; скидка&nbsp;10% на&nbsp;любую услугу.
+				+e.btn(href="#") воспользоваться скидкой
+			+e.right-block
+				+e.img-wrap2
+					+pic("promocode-car.png")
+	// end s-promocode

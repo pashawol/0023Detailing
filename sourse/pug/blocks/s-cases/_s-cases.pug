@@ -1,0 +1,43 @@
+mixin s-cases()
+	// start s-cases
+	+b.SECTION.s-cases.section#s-cases&attributes(attributes)
+		
+		.container
+			+b.section-title
+				h2 наши  
+					span.text-primary работы
+			+b.tabs
+				
+				+e.caption-wrap
+					+e.caption
+						+e.btn.active
+							span полировка кузова
+						+e.btn
+							span нанесение керамики
+						+e.btn
+							span химчистка салона
+						+e.btn
+							span антигравийная обработка
+						+e.btn
+							span тонировка
+						+e.btn
+							span ремонт стекол
+						+e.btn
+							span ремонт вмятин без покраски
+						+e.btn
+							span предпродажная подготовка
+				+e.hr
+				+e.wrap
+					mixin cont()
+						+e.content&attributes(attributes)
+							.row
+								- for (var x = 1; x <= 12; x++)
+									.col-xl-3.col-md-4.col-6
+										+e.img-wrap.bg-wrap(href=`img/@2x/gal-${x}.jpg`)
+											+pic(`gal-${x}.jpg`,'bg')(class="picture-bg")
+										
+					+cont()(class="active")
+					- for (var x = 1; x <= 6; x++)
+						+cont()
+			+e.btn(href="#") записаться на консультациюs
+	// end s-cases

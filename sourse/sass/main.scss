@@ -12,13 +12,14 @@ $output-bourbon-deprecation-warnings: false;
 
 
 @import "vars";
+$rfs-breakpoint: 1510 !default;
 @import "./node_modules/bootstrap/scss/vendor/rfs";
 @import "./node_modules/bootstrap/scss/functions"; 
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/mixins";
 
 
-$theme-colors: map-remove($theme-colors, "info", "light", "dark",'warning');
+// $theme-colors: map-remove($theme-colors, "info", "light", "dark",'warning');
 @import "./node_modules/bootstrap/scss/root";
 @import "./node_modules/bootstrap/scss/reboot";
 @import "./node_modules/bootstrap/scss/type";

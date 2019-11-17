@@ -1,7 +1,30 @@
 .footer {
-		
+  background-color: $body-color;
+  padding-top: rem(55);
+  padding-bottom: rem(40);
+  color: #6b6b6b;
+  font-family: "Text Book";
+  font-size: rem(12px);
+  font-weight: 700;
+  line-height: 1.83;
+  text-transform: uppercase;
+  // Text style for "политика к"
+  letter-spacing: rem(0.96px);
+  a{
+    text-decoration: none !important;
+    color: #6b6b6b;
+    span{
+      color: #ffffff;
+    }
+    display: inline-block;
+    margin-bottom: rem(15);
+}
 
-
+.row{
+  justify-content: space-between;
+  align-items: center;
+}
+text-align: center;
 // 
 @include media-breakpoint-up(xl) {}
 

@@ -15,17 +15,20 @@ html {
 	opacity: 0;
 	// opacity: 0.7;
 }  
-.header-block{
-	min-height: 1000px !important;
-}
+// .header-block{
+// 	min-height: 1000px !important;
+// }
 body,
 html {
 	@include media-breakpoint-up(xxl) {
-
+		
 		font-size: $em-base;
 	}
+				@include media-breakpoint-up(sm) {
 	font-size: 16px;
 	// @include font-size(1rem);
+} 
+font-size: 14px;
 } 
 .section { 
 	@include bgs; 

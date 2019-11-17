@@ -10,7 +10,7 @@ mixin s-servises()
 				var nav= ["полировка кузова","нанесение керамики","химчистка салона","антигравийная защита","РЕМОНТ ВМЯТИН БЕЗ ПОКРАСКИ","тонировка","ремонт стекол","ПРЕДПРОДАЖНАЯ ПОДГОТОВКА"] 
 			.row
 				each title in nav
-					+e.col.col-xl-3.col-md-4.col-6(href=`#`)
+					+e.col.col-xl-3.col-md-4.col-6.link-modal(href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order=`Заказать  ${title}`) 
 						+e.img-wrap.bg-wrap
 							+pic(`servises-${(nav.indexOf(title) + 1)}.jpg`,'bg')(class="picture-bg")
 						+e.title= title

@@ -9,7 +9,7 @@ mixin s-promocode()
 					h2 промокод 
 						span.text-white brook
 				p До&nbsp;31&nbsp;ноября 2019 по&nbsp;промокоду &laquo;BROOK&raquo; скидка&nbsp;10% на&nbsp;любую услугу.
-				+e.btn(href="#") воспользоваться скидкой
+				+e.btn.link-modal(href="#modal-call" data-title="Воспользоваться скидкой" data-btn="Отправить" data-order=`Воспользоваться скидкой `)  Воспользоваться скидкой
 			+e.right-block
 				+e.img-wrap2
 					+pic("promocode-car.png")

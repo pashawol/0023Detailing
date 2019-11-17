@@ -1,4 +1,22 @@
 .form-wrap{
+
+	&__title{
+		@include rfs(rem(26));
+		line-height: 1;
+		text-transform: uppercase;
+		font-weight: bold;
+		// // @extend .asph;
+		margin-bottom: rem(20);
+		+ p { 
+			opacity: 0.7;
+			margin-bottom: rem(26);
+		}
+	}
+	form{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 330px;
+	}
  	&__input-wrap{
 			// @extend .form-group;
 			
@@ -6,17 +24,31 @@
 		&__input{
 			// @extend .form-control;
 		//  outline: 0 !important;
-		 resize: none;
+		font-size: $small;
+		text-align: center; 
+		box-shadow: none;
+		box-shadow: none !important;
  	}
  	&__btn{
- 		cursor: pointer;
+		 cursor: pointer;
+		 @extend .btn;
+		 @extend .btn-outline-primary;
+		 @extend .btn-block;
+		 color: $body-color;
  	}
  	label{
  		width: 100%;
  		display: block;
  	}
 }
-
+.form-wrap__polite{
+	margin-left: auto;
+	margin-right: auto;
+	// max-width: rem(280);
+	line-height: 1;
+	margin-top: rem(30);
+ 
+}
 
 .parsley-error{
 	border-image: none;
@@ -81,6 +113,7 @@
 	position: relative;
 	padding-left: rem(35px);
 	display: inline-block;
+	color: #8d8d8d;
 	&__input{
 		position: absolute;
 		// opacity: 0;
@@ -96,9 +129,9 @@
 		left: 0;
 		display: block;
 		top: rem(3); 
-		width: rem(20px);
-		height: rem(20px);
-		background-color: $primary;
+		width: rem(20);
+		height: rem(20); 
+		border: 1px solid $primary;
 		@include mt;
 		position: absolute; 
 		margin-right: 10px;
@@ -113,10 +146,11 @@
  
 	&__input[type="checkbox"] + &__lab{
 		&::after{ 
-			content:   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M413.505 91.951L133.49 371.966l-98.995-98.995c-4.686-4.686-12.284-4.686-16.971 0L6.211 284.284c-4.686 4.686-4.686 12.284 0 16.971l118.794 118.794c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-11.314-11.314c-4.686-4.686-12.284-4.686-16.97 0z' class='st0'/%3E%3C/svg%3E");
+			content:   url("../img/check-symbol.png");
 			position: absolute;
 			@include a-cent; 
 			opacity: 0;
+			margin-top: rem(-1);
 		}
 	}
 
@@ -127,9 +161,8 @@
 		}
 	}
 
-	&__input:checked + &__lab{
-		background-color: $success;
-		 
+	&__input:checked + &__lab{ 
+		background-color: $primary;
 		&::after{
 	
 			opacity: 1;

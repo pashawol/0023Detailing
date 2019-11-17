@@ -6,7 +6,7 @@ mixin s-contact()
 				h2 контакты
 				p Россия, Оренбург, Шоссейная улица, 24
 				+link-tel()
-				+e.btn(href="#") оставить заявку
+				+e.btn.link-modal(href="#modal-call" data-title="Оставить заявку " data-btn="Оставить заявку" data-order=`Оставить заявку в подвале `) Оставить заявку
 		#map
 		script.
 			var map;

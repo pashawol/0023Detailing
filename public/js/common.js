@@ -30,6 +30,22 @@ var JSCCommon = {
 		$(".modal-close-js").click(function () {
 			$.fancybox.close();
 		});
+		$(document).on('click', '.link-modal', function () {
+			var th = $(this);
+			var modal = th.attr('href');
+			$(modal).find(".order").val(th.data('order'));
+			$(modal).find(".form-wrap__title--js").html(th.data('title')); // $(modal).find(".form-wrap__text--js").html(th.data('text')); 
+
+			$(modal).find(".form-wrap__btn").text(th.data('btn'));
+
+			if ($(this).hasClass("modal-win__btn")) {
+				$(modal).find(".order").val("Акция: " + th.parent().find(".title").text());
+			}
+
+			if ($(this).hasClass("s-services__btn")) {
+				$(modal).find(".order").val("Заявка на: " + th.parents(".s-services__item").find(".s-services__item-title").text());
+			}
+		});
 	},
 	paddRight: function paddRight(elem) {
 		var div = document.createElement('div');
@@ -141,11 +157,7 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
-	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
-	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Landing_Desktop.jpg);"></div>'); // /добавляет подложку для pixel perfect
-	// const url = document.location.href;
+	JSCCommon.inputMask(); // const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
 	// 		if ($(this).hasClass("top-nav__link") == true) {
@@ -209,7 +221,7 @@ function eventHandler() {
 	});
 	heightses(); // листалка по стр
 
-	$(" .top-nav li a, .scroll-link").click(function () {
+	$(" .aside__inner li a, .scroll-link").click(function () {
 		var elementClick = $(this).attr("href");
 		var destination = $(elementClick).offset().top;
 		$('html, body').animate({
@@ -267,32 +279,14 @@ function eventHandler() {
 	}(); // form
 
 
-	$("form").submit(function (e) {
-		e.preventDefault();
+	$("form").each(function () {
+		// e.preventDefault();
 		var th = $(this);
 		var data = th.serialize();
 		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
 		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
 		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
 		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-		$.ajax({
-			url: 'action.php',
-			type: 'POST',
-			data: data
-		}).done(function (data) {
-			$.fancybox.close();
-			$.fancybox.open({
-				src: '#modal-thanks',
-				type: 'inline'
-			}); // window.location.replace("/thanks.html");
-
-			setTimeout(function () {
-				// Done Functions
-				th.trigger("reset"); // $.magnificPopup.close();
-				// ym(53383120, 'reachGoal', 'zakaz');
-				// yaCounter55828534.reachGoal('zakaz');
-			}, 4000);
-		}).fail(function () {});
 	});
 }
 

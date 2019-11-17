@@ -290,6 +290,8 @@ function eventHandler() {
 	});
 	var scriptMap = document.createElement('script');
 	scriptMap.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCnoRp8wBQeCZLL8k4R-vckP_wDGVR2k10&callback=initMap';
+	scriptMap.async = "true";
+	scriptMap.defer = "true";
 	document.body.append(scriptMap);
 	var map;
 

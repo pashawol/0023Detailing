@@ -1,16 +1,17 @@
 mixin header-block()
 	// start header-block
 	+b.header-block.bg--dark#header-block()
-		+e.inner
-			.d-xl-none
-				+e.logo
-					a(href="/")
-						img(src="img/@2x/logo.png", alt="")
-			.container
-				+e.text-animate(data-bg="img/ezgifcom-optimize_5.gif").d-none.d-md-block
-					+e.title brooklyn
-					+e.sub детейлинг центр
-				+e.text Защитим автомобиль от&nbsp;царапин и&nbsp;сколов, удалим царапины и&nbsp;вмятины, сделаем кузов блестящим, а&nbsp;салон чистым.
-				+e.scroll-down
-					+icon("left-down")
+		.container
+			+e.inner
+				.d-xl-none(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.5  }s`)
+					+e.logo
+						a(href="/")
+							img(src="img/@2x/logo.png", alt="")
+				div(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay }s`)
+					+e.text-animate.d-none.d-md-block(data-bg="img/ezgifcom-optimize_5.gif")
+						+e.title brooklyn
+						+e.sub детейлинг центр
+					+e.text Защитим автомобиль от&nbsp;царапин и&nbsp;сколов, удалим царапины и&nbsp;вмятины, сделаем кузов блестящим, а&nbsp;салон чистым.
+			+e.scroll-down(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.5   * 1.2 }s`)
+				+icon("left-down")
 	// end header-block

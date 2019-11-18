@@ -2,16 +2,16 @@ mixin s-servises()
 	// start s-servises
 	+b.SECTION.s-servises.section#s-servises&attributes(attributes)
 		.container
-			+b.section-title
+			+b.section-title(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay  * .1}s`)
 				h2 основные 
 					span.text-primary услуги
 				
 			-
 				var nav= ["полировка кузова","нанесение керамики","химчистка салона","антигравийная защита","РЕМОНТ ВМЯТИН БЕЗ ПОКРАСКИ","тонировка","ремонт стекол","ПРЕДПРОДАЖНАЯ ПОДГОТОВКА"] 
-			.row
+			.row( class="wow fadeIn"   data-wow-duration=`${dur}s`  data-wow-delay=`${delay  *  1.1 }s`)
 				each title in nav
-					+e.col.col-xl-3.col-md-4.col-6.link-modal(href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order=`Заказать  ${title}`) 
+					+e.col.col-xl-3.col-md-4.col-6.link-modal(href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order=`Заказать  ${title}`)
 						+e.img-wrap.bg-wrap
 							+pic(`servises-${(nav.indexOf(title) + 1)}.jpg`,'bg')(class="picture-bg")
-						+e.title= title
+						+e.H3.title= title
 	// end s-servises

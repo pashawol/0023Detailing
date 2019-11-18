@@ -2,11 +2,11 @@
 $default-font: "roboto";
 // $file-form: ($file-formats: woff2 woff ttf);
 $addr: '../fonts/';
-
-@include font-face ($default-font, $addr + "SFProDisplay-Regular", $file-formats: woff2);
-@include font-face ($default-font, $addr + "SFProDisplay-Bold", bold, $file-formats: woff2);
-@include font-face ($default-font, $addr + "SFProDisplay-Thin", 200, $file-formats: woff2);
-@include font-face ("Text Book", $addr + "TextBookC-Bold", 700, $file-formats: woff2);
+$file-format: woff2;
+@include font-face ($default-font, $addr + "SFProDisplay-Regular", $file-formats: $file-format);
+@include font-face ($default-font, $addr + "SFProDisplay-Bold", bold, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "SFProDisplay-Thin", 200, $file-formats: $file-format);
+@include font-face ("Text Book", $addr + "TextBookC-Bold", 700, $file-formats: $file-format);
 
 // font-weight helper:
 

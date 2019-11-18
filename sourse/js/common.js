@@ -1,3 +1,5 @@
+ 
+
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile : [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
@@ -148,6 +150,15 @@ const JSCCommon = {
 };
 
 function eventHandler() {
+
+  $('.before-load').find('img').fadeOut().parent().delay(400).fadeOut('slow',function(){
+		$("body").removeClass("before-loaded");
+		$(".aside--js").removeClass("before-loaded");
+		var wow = new WOW({
+			mobile: false
+		});
+		wow.init();
+	});
 	// полифил для object-fit
 	objectFitImages();
 	// Picture element HTML5 shiv
@@ -201,7 +212,7 @@ function eventHandler() {
 			}
 		});
 		// конец добавил
-		if (window.matchMedia("(min-width: 1200x)").matches) {
+		if (window.matchMedia("(min-width: 1200px)").matches) {
 			JSCCommon.closeMenu();
 		}
 		function toggleColor() {
@@ -240,7 +251,7 @@ function eventHandler() {
 	heightses();
 
 	// листалка по стр
-	$(" .aside__inner li a, .scroll-link").click(function() {
+	$(" .scroll-link").click(function() {
 		const elementClick = $(this).attr("href");
 		const destination = $(elementClick).offset().top;
 
@@ -248,6 +259,57 @@ function eventHandler() {
 
 		return false;
 	});
+
+
+
+		// Cache selectors
+		var lastId,
+		topMenu = $(" .aside__inner .menu"),
+				topMenuHeight = 0,
+				// topMenuHeight = topMenu.outerHeight()+15,
+				// All list items
+				menuItems = topMenu.find("a"),
+				// Anchors corresponding to menu items
+				scrollItems = menuItems.map(function(){
+					var item = $($(this).attr("href"));
+					if (item.length) { return item; }
+				});
+
+		// Bind click handler to menu items
+		// so we can get a fancy scroll animation
+		menuItems.click(function(e){
+			var href = $(this).attr("href"),
+					offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+			$('html, body').stop().animate({ 
+					scrollTop: offsetTop
+			}, 1100);
+			e.preventDefault();
+		});
+
+		// Bind to scroll
+		$(window).scroll(function(){
+			// Get container scroll position
+			var fromTop = $(this).scrollTop()+topMenuHeight;
+			
+			// Get id of current scroll item
+			var cur = scrollItems.map(function(){
+				if ($(this).offset().top < fromTop)
+					return this;
+			});
+			// Get the id of the current element
+			cur = cur[cur.length-1];
+			var id = cur && cur.length ? cur[0].id : "";
+			
+			if (lastId !== id) {
+					lastId = id;
+					// Set/remove active class
+					menuItems
+						.removeClass("active").parent()
+						.end().filter("[href='#"+id+"']").addClass("active");
+			}                   
+		});
+
+
 
 	$(".header-block__scroll-down").click(function() {
 		const elementClick = "#s-about";
@@ -316,12 +378,24 @@ function eventHandler() {
 		scriptMap.defer = "true";
 		document.body.append(scriptMap);
 	var map;
+	var centerMap;
+	var mapPosition = {lat:51.82294807220123,lng: 55.09849149999999};
+		if (window.matchMedia("(min-width: 1200px)").matches) {
+
+			centerMap = {lat:51.82294807220123,lng: 55.095} ;
+		 
+		}
+		else{
+
+			centerMap =  mapPosition;
+		}
+
 				function initMap() {
 					
 						map = new google.maps.Map(document.getElementById('map'), {
 						zoom: 15,
 						//- center: new google.maps.LatLng(53.98205856875258,88.80421049999992),
-						center: new google.maps.LatLng(51.82294807220123,55.095),
+						center: new google.maps.LatLng(centerMap),
 						mapTypeId: 'roadmap',
 						styles: [ {"featureType": "all","elementType": "labels.text.fill","stylers": [
 													{
@@ -496,7 +570,7 @@ function eventHandler() {
 						};
 						var features = [
 						{
-						position: new google.maps.LatLng(51.82294807220123,55.09849149999999),
+						position: new google.maps.LatLng( mapPosition),
 						type: 'info',
 						title: 'Россия, Оренбург, Шоссейная улица, 24',
 						}, 
@@ -520,11 +594,16 @@ function eventHandler() {
 					setTimeout(function() { 
 					initMap();
 				}, 3000);
+
+				
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
 } else {
 	document.addEventListener('DOMContentLoaded', eventHandler);
 }
+
+
 
 

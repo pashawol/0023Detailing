@@ -3,7 +3,7 @@
   padding-top: rem(65);
   padding-bottom: rem(50);
   color: #6b6b6b;
-  font-family: "Text Book";
+  font-family: "Text Book",   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: rem(12px);
   font-weight: 700;
   line-height: 1.83;
@@ -12,14 +12,24 @@
   letter-spacing: rem(0.96px);
   a{
     text-decoration: none !important;
-    color: #6b6b6b;
     span{
-      color: #ffffff;
     }
     display: inline-block;
     margin-bottom: rem(15);
+  }
+  &__polite{
+    
+    color: #6b6b6b ;
+    &:hover{
+      color: #ffffff;
+    }
+  }
+  &__dev{
+    color: #ffffff;
+    &:hover{
+      color: $primary;
+    }
 }
-
 .row{
   justify-content: space-between;
   align-items: center;

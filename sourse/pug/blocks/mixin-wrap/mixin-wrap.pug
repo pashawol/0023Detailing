@@ -1,4 +1,5 @@
-
+- let dur = .3
+- let delay = dur * 2
 
 //- svg-sprite
 mixin icon(name,mod)
@@ -247,7 +248,7 @@ mixin ie11()
 
 
 mixin link-tel()
-	a.link-tel(href="tel:+73532692725") 
+	a.link-tel(href="tel:+73532692725")&attributes(attributes) 
 		if block
 			span +7 3532 69 27 25
 			block

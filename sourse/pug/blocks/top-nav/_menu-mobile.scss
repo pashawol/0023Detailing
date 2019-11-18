@@ -5,15 +5,12 @@ $h: 2px;
 
 .toggle-menu-mobile {
 	display: block;
-	height: $h* 14;
-	// margin-top: 15px;
-	margin-left: 0;
+	height: $h* 10;
+	// margin-top: 15px; 
 	position: relative;
 	z-index: 999 !important;
-	// right: 0;
-	padding: 3px;
-	// border-radius: 5px;
-	top: $h;
+	// right: 0; 
+	// border-radius: 5px; 
 	cursor: pointer;
 
 	span:after,

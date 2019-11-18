@@ -57,6 +57,7 @@
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
     "swiper": "^5.2.0",
-    "wow": "0.0.6"
+    "wow": "0.0.6",
+    "wowjs": "^1.1.3"
   }
 }

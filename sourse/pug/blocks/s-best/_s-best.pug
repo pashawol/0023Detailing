@@ -10,15 +10,15 @@ mixin s-best()
 		.container
 			.row
 				.col-md-6
-					+b.section-title
+					+b.section-title(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 0))}s`)
 						h2 
 							span.text-primary лучшие 
 							| в&nbsp;своем деле
 					.d-none.d-md-block
-						+e.text  Сертификат соответствия PCK.RU.0001.P392289
-						+e.btn(href="#") открыть сертификат
+						+e.text(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 1))}s`)  Сертификат соответствия PCK.RU.0001.P392289
+						+e.btn(href="#"  class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 3))}s`) открыть сертификат
 				.col
-					+e.text-wrap
+					+e.text-wrap(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 4))}s`)
 						p Закончились месяцы подготовки, обучения, замеров и&nbsp;теперь наши услуги полностью соответствуют гос. стандартам и&nbsp;требованиям заводов изготавителей авто. Brooklyn стал единственным сертифицированным детейлинг центром в&nbsp;Оренбурге.
 
 						p 

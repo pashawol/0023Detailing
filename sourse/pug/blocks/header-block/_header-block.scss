@@ -3,18 +3,21 @@
 	text-align: center;
 	// display: flex;
 	// flex-direction: column;
-	display: table;
 	width: 100%;
-	@include media-breakpoint-up(xxl) {
-
-		padding-top: rem(100);
-		padding-bottom: rem(100);
+	.container{
+		position: relative;
+		display: table;
+		@include media-breakpoint-up(xxl) {
+			
+			padding-top: rem(100);
+			padding-bottom: rem(100);
+		}
+		@include media-breakpoint-up(md) {
+			height: 100vh;
+			min-height: 100vh;
+		}
+		min-height: calc(100vh - 50px);
 	}
-	@include media-breakpoint-up(md) {
-		height: 100vh;
-		min-height: 100vh;
-	}
-	min-height: calc(100vh - 50px);
 	&__inner{
 		display: table-cell;
 		vertical-align: middle;
@@ -24,7 +27,7 @@
 	}
 	&__text-animate{
 
-		font-family: "Text Book";
+		font-family: "Text Book",   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		// font-size: 214px;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -91,6 +94,7 @@
 			top: rem(20);
 		}
 		margin-bottom: rem(30);
+		z-index: 1110;
 		img{
 			max-width: 100%;
 			height: auto;
@@ -133,7 +137,7 @@
 	@include media-breakpoint-down(sm) {
 		background-image: url(../img/@2x/header-bg.jpg);
 		background-size: cover;
-		animation:move-background 70s linear infinite;
+		animation:move-background 35s linear infinite;
 	}
 
 
@@ -144,11 +148,17 @@
 }
 
 @keyframes move-background {
-  from {
-		background-position-x: -100%;
-	}
-	to { 
+  0% {
 		background-position-x: 100%;
+	}
+	50%{
+		
+		background-position-x: 0;
+	}
+	
+	100% { 
+		background-position-x: 100%;
+		// background-position-x: 0;
 		// -webkit-transform: translate3d(1000px, 0px, 0px);
 	}
 }

@@ -2,10 +2,10 @@ mixin s-materials()
 	// start s-materials
 	+b.SECTION.s-materials.section#s-materials&attributes(attributes)
 		.container
-			+b.section-title
+			+b.section-title(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 0))}s`)
 					h2 ПРОФЕССИОНАЛЬНЫЕ 
 						span.text-primary МАТЕРИАЛЫ
-			.row
+			.row(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 1))}s`)
 				- for (var x = 1; x <= 15; x++)
 					+e.col.col-6
 						img.res-i.lazy(src="#" data-src=`img/@2x/logo-${x}.png`, alt="") 

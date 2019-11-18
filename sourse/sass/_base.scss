@@ -66,8 +66,9 @@ font-size: 14px;
 	@extend .h2;
 	padding-bottom: em(11); 
 }
+		h1,
 		 h2 {
-			font-family: "Text Book";
+			font-family: "Text Book",   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 			text-transform: uppercase;
 			@include media-breakpoint-up(md) {}
 		}
@@ -485,7 +486,7 @@ a{
 }
 .btn{
 	text-transform: uppercase;
-	font-family: "Text Book";
+	font-family: "Text Book",   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	box-shadow: none !important;
 }
 .btn-lg{
@@ -497,4 +498,19 @@ a{
 	.row{
 		@include roww(5);
 	}
+}
+.btn-dark{
+	&:hover{
+
+		border-color: $primary;
+		background-color: $primary;
+		color: $body-color;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+
+	.wow{
+		visibility: hidden;
+}
 }

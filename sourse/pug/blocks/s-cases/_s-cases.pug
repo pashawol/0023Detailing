@@ -3,13 +3,13 @@ mixin s-cases()
 	+b.SECTION.s-cases.section#s-cases&attributes(attributes)
 		
 		.container
-			+b.section-title
+			+b.section-title(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay }s`)
 				h2 наши  
 					span.text-primary работы
 			+b.tabs
 				
 				+e.caption-wrap
-					+e.caption
+					+e.caption(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 1))}s`)
 						+e.btn.active
 							span полировка кузова
 						+e.btn
@@ -26,8 +26,8 @@ mixin s-cases()
 							span ремонт вмятин без покраски
 						+e.btn
 							span предпродажная подготовка
-				+e.hr
-				+e.wrap
+				+e.hr(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 3))}s`)
+				+e.wrap( class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 4))}s`)
 					mixin cont()
 						+e.content&attributes(attributes)
 							.row
@@ -39,5 +39,5 @@ mixin s-cases()
 					+cont()(class="active")
 					- for (var x = 1; x <= 6; x++)
 						+cont()
-			+e.btn.link-modal(href="#modal-call" data-title="Записаться на консультацию " data-btn="Записаться" data-order=`Записаться на консультацию  `) Записаться на консультацию 
+			+e.btn.link-modal(href="#modal-call" data-title="Записаться на консультацию " data-btn="Записаться" data-order=`Записаться на консультацию  ` ) Записаться на консультацию 
 	// end s-cases

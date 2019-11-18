@@ -77,10 +77,21 @@
 	//
 	@include media-breakpoint-down(xl) {}
 	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {
-		padding-bottom: 0;
-	}
-	@include media-breakpoint-down(xs) {} 
+	@include media-breakpoint-down(md) {
+		&__img-wrap,
+		&__img-wrap2{
+			// margin-bottom: rem(-20);
+		}
+		padding-bottom: 0 !important;
 
+	}
+	@include media-breakpoint-down(xs) {
+	} 
+	
+}
+.s-about{
+
+	@include media-breakpoint-down(sm) {
+		padding-bottom: 0 !important;
+	}
 }

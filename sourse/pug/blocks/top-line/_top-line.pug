@@ -1,14 +1,14 @@
 mixin top-line()
 	// start .top-line
 	+b.top-line
-		.container
+		.container(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.5 * 1.2}s`)
 			.row
 				.col-md-auto.col-3.d-xl-none
 					+b.toggle-menu-mobile--js
 						span
 				+e.logo.col.d-md-none
 					a(href="/")
-						img(src="img/@2x/korona.png", alt="")
+						+icon('korona') 
 				.text-right.col-md-auto.col-3
 					+link-tel()
 						+icon("call-answer")

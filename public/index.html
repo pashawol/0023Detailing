@@ -5,7 +5,7 @@
 		<title>title</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
+		<meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png">
 		<link rel="image_src" href="img/favicon/favicon.png">
 		<meta property="og:type" content="website">
@@ -20,13 +20,39 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#141414">
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="libs/animate.css/animate.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
-	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+	<style>
+		.before-loaded{
+				height: 100%;
+				overflow: hidden;
+				position: absolute;
+				width: 100%;
+			}
+			.before-load{
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #000000;
+				z-index: 1200;
+			}
+		
+			.before-load img{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+	</style>
+	<body class="before-loaded"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+		<div class="before-load"><img src="data:image/png;base64,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" alt=""></div>
 		<div class="main-wrapper">
 			<!-- start aside-->
-			<aside class="aside aside--js">
-				<div class="aside__inner">
+			<aside class="aside aside--js before-loaded">
+				<div class="aside__inner fadeInLeft"> 
 					<div class="aside__logo d-none d-xl-block"><a href="/"><img src="img/@2x/logo.png" alt=""/></a>
 					</div>
 					<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
@@ -57,13 +83,16 @@
 			<!-- end aside-->
 			<!-- start .top-line-->
 			<div class="top-line">
-				<div class="container">
+				<div class="container wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.0799999999999998s">
 					<div class="row">
 						<div class="col-md-auto col-3 d-xl-none">
 							<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 							</div>
 						</div>
-						<div class="top-line__logo col d-md-none"><a href="/"><img src="img/@2x/korona.png" alt=""/></a>
+						<div class="top-line__logo col d-md-none"><a href="/">
+								<svg class="icon icon-korona ">
+									<use xlink:href="img/svg/sprite.svg#korona"></use>
+								</svg></a>
 						</div>
 						<div class="text-right col-md-auto col-3"><a class="link-tel" href="tel:+73532692725"> <span>+7 3532 69 27 25</span>
 								<svg class="icon icon-call-answer ">
@@ -78,25 +107,27 @@
 			<!-- end .top-line-->
 			<!-- start header-block-->
 			<div class="header-block bg bg--dark" id="header-block">
-				<div class="header-block__inner">
-					<div class="d-xl-none">
-						<div class="header-block__logo"><a href="/"><img src="img/@2x/logo.png" alt=""/></a>
+				<div class="container">
+					<div class="header-block__inner">
+						<div class="d-xl-none wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.8999999999999999s">
+							<div class="header-block__logo"><a href="/"><img src="img/@2x/logo.png" alt=""/></a>
+							</div>
+						</div>
+						<div class="wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.6s">
+							<div class="header-block__text-animate d-none d-md-block" data-bg="img/ezgifcom-optimize_5.gif">
+								<div class="header-block__title">brooklyn
+								</div>
+								<div class="header-block__sub">детейлинг центр
+								</div>
+							</div>
+							<div class="header-block__text">Защитим автомобиль от&nbsp;царапин и&nbsp;сколов, удалим царапины и&nbsp;вмятины, сделаем кузов блестящим, а&nbsp;салон чистым.
+							</div>
 						</div>
 					</div>
-					<div class="container">
-						<div class="header-block__text-animate d-none d-md-block" data-bg="img/ezgifcom-optimize_5.gif">
-							<div class="header-block__title">brooklyn
-							</div>
-							<div class="header-block__sub">детейлинг центр
-							</div>
-						</div>
-						<div class="header-block__text">Защитим автомобиль от&nbsp;царапин и&nbsp;сколов, удалим царапины и&nbsp;вмятины, сделаем кузов блестящим, а&nbsp;салон чистым.
-						</div>
-						<div class="header-block__scroll-down">
-							<svg class="icon icon-left-down ">
-								<use xlink:href="img/svg/sprite.svg#left-down"></use>
-							</svg>
-						</div>
+					<div class="header-block__scroll-down wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.0799999999999998s">
+						<svg class="icon icon-left-down ">
+							<use xlink:href="img/svg/sprite.svg#left-down"></use>
+						</svg>
 					</div>
 				</div>
 			</div>
@@ -105,25 +136,27 @@
 			<section class="s-about section" id="s-about">
 				<div class="container">
 					<div class="s-about__block">
-						<div class="section-title">
-							<h2>
-								Детейлинг центр в&nbsp;Оренбурге &mdash;<span class="text-primary">Brooklyn</span></h2>
+						<div class="section-title wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.6s">
+							<h1>
+								Детейлинг центр в&nbsp;Оренбурге &mdash;<span class="text-primary">Brooklyn</span></h1>
 						</div>
-						<p>Brooklyn&nbsp;&mdash; единственный сертифицированный детейлинг центр в&nbsp;Оренбурге. Мы&nbsp;реализуем комплексные проекты по&nbsp;детейлингу, оклейке автомобилей виниловыми и&nbsp;полиуретановыми пленками, тонировке, ремонту стекол и&nbsp;удалению вмятин без покраски.</p>
-						<p>Основа нашей работы это высокая культура оказания детейлинг услуг. Мы&nbsp;используем только профессиональные составы. Применяем высокие стандарты к&nbsp;персоналу.</p>
-						<p>Преобразите внешний вид вашего автомобиля вместе с&nbsp;Brooklyn.</p>
+						<div class="wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.72s">
+							<p>Brooklyn&nbsp;&mdash; единственный сертифицированный детейлинг центр в&nbsp;Оренбурге. Мы&nbsp;реализуем комплексные проекты по&nbsp;детейлингу, оклейке автомобилей виниловыми и&nbsp;полиуретановыми пленками, тонировке, ремонту стекол и&nbsp;удалению вмятин без покраски.</p>
+							<p>Основа нашей работы это высокая культура оказания детейлинг услуг. Мы&nbsp;используем только профессиональные составы. Применяем высокие стандарты к&nbsp;персоналу.</p>
+							<p>Преобразите внешний вид вашего автомобиля вместе с&nbsp;Brooklyn.</p>
+						</div>
 					</div>
 					<div class="s-about__img-wrap">
 						<!-- picture-->
-						<picture class="lazy picture-2"> 
-							<source srcset="#" data-srcset="img/@2x/s-about-img-2.png" type="image/png" media="(min-width:576px)"/>
-							<source srcset="#" data-srcset="img/@1x/s-about-img-2.png" type="image/png"/><img src="#" data-src="img/@2x/s-about-img-2.png" alt=""/>
+						<picture class="picture-2 wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.3823999999999999s"> 
+							<source srcset="img/@2x/s-about-img-2.png" type="image/png" media="(min-width:576px)"/>
+							<source srcset="img/@1x/s-about-img-2.png" type="image/png"/><img src="img/@2x/s-about-img-2.png" alt=""/>
 						</picture>
 						<!-- /picture-->
 						<!-- picture-->
-						<picture class="lazy picture-1"> 
-							<source srcset="#" data-srcset="img/@2x/s-about-img-1.png" type="image/png" media="(min-width:576px)"/>
-							<source srcset="#" data-srcset="img/@1x/s-about-img-1.png" type="image/png"/><img src="#" data-src="img/@2x/s-about-img-1.png" alt=""/>
+						<picture class="picture-1 wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.152s"> 
+							<source srcset="img/@2x/s-about-img-1.png" type="image/png" media="(min-width:576px)"/>
+							<source srcset="img/@1x/s-about-img-1.png" type="image/png"/><img src="img/@2x/s-about-img-1.png" alt=""/>
 						</picture>
 						<!-- /picture-->
 					</div>
@@ -133,58 +166,74 @@
 			<!-- start s-servises-->
 			<section class="s-servises section" id="s-servises">
 				<div class="container">
-					<div class="section-title">
+					<div class="section-title wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.06s">
 						<h2>основные <span class="text-primary">услуги</span></h2>
 					</div>
-					<div class="row"><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  полировка кузова"> <span class="s-servises__img-wrap bg-wrap">
+					<div class="row wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.66s"><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  полировка кузова"><span class="s-servises__img-wrap bg-wrap">
 						<!-- picture-->
 						<picture class="lazy picture-bg"> 
 							<source srcset="#" data-srcset="img/@2x/servises-1.jpg" type="image/jpg" media="(min-width:576px)"/>
 							<source srcset="#" data-srcset="img/@1x/servises-1.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/servises-1.jpg" alt=""/>
 						</picture>
-						<!-- /picture--></span><span class="s-servises__title">полировка кузова</span></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  нанесение керамики"> <span class="s-servises__img-wrap bg-wrap">
+						<!-- /picture--></span>
+						<h3 class="s-servises__title">полировка кузова
+						</h3></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  нанесение керамики"><span class="s-servises__img-wrap bg-wrap">
 						<!-- picture-->
 						<picture class="lazy picture-bg"> 
 							<source srcset="#" data-srcset="img/@2x/servises-2.jpg" type="image/jpg" media="(min-width:576px)"/>
 							<source srcset="#" data-srcset="img/@1x/servises-2.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/servises-2.jpg" alt=""/>
 						</picture>
-						<!-- /picture--></span><span class="s-servises__title">нанесение керамики</span></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  химчистка салона"> <span class="s-servises__img-wrap bg-wrap">
+						<!-- /picture--></span>
+						<h3 class="s-servises__title">нанесение керамики
+						</h3></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  химчистка салона"><span class="s-servises__img-wrap bg-wrap">
 						<!-- picture-->
 						<picture class="lazy picture-bg"> 
 							<source srcset="#" data-srcset="img/@2x/servises-3.jpg" type="image/jpg" media="(min-width:576px)"/>
 							<source srcset="#" data-srcset="img/@1x/servises-3.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/servises-3.jpg" alt=""/>
 						</picture>
-						<!-- /picture--></span><span class="s-servises__title">химчистка салона</span></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  антигравийная защита"> <span class="s-servises__img-wrap bg-wrap">
+						<!-- /picture--></span>
+						<h3 class="s-servises__title">химчистка салона
+						</h3></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  антигравийная защита"><span class="s-servises__img-wrap bg-wrap">
 						<!-- picture-->
 						<picture class="lazy picture-bg"> 
 							<source srcset="#" data-srcset="img/@2x/servises-4.jpg" type="image/jpg" media="(min-width:576px)"/>
 							<source srcset="#" data-srcset="img/@1x/servises-4.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/servises-4.jpg" alt=""/>
 						</picture>
-						<!-- /picture--></span><span class="s-servises__title">антигравийная защита</span></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  РЕМОНТ ВМЯТИН БЕЗ ПОКРАСКИ"> <span class="s-servises__img-wrap bg-wrap">
+						<!-- /picture--></span>
+						<h3 class="s-servises__title">антигравийная защита
+						</h3></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  РЕМОНТ ВМЯТИН БЕЗ ПОКРАСКИ"><span class="s-servises__img-wrap bg-wrap">
 						<!-- picture-->
 						<picture class="lazy picture-bg"> 
 							<source srcset="#" data-srcset="img/@2x/servises-5.jpg" type="image/jpg" media="(min-width:576px)"/>
 							<source srcset="#" data-srcset="img/@1x/servises-5.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/servises-5.jpg" alt=""/>
 						</picture>
-						<!-- /picture--></span><span class="s-servises__title">РЕМОНТ ВМЯТИН БЕЗ ПОКРАСКИ</span></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  тонировка"> <span class="s-servises__img-wrap bg-wrap">
+						<!-- /picture--></span>
+						<h3 class="s-servises__title">РЕМОНТ ВМЯТИН БЕЗ ПОКРАСКИ
+						</h3></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  тонировка"><span class="s-servises__img-wrap bg-wrap">
 						<!-- picture-->
 						<picture class="lazy picture-bg"> 
 							<source srcset="#" data-srcset="img/@2x/servises-6.jpg" type="image/jpg" media="(min-width:576px)"/>
 							<source srcset="#" data-srcset="img/@1x/servises-6.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/servises-6.jpg" alt=""/>
 						</picture>
-						<!-- /picture--></span><span class="s-servises__title">тонировка</span></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  ремонт стекол"> <span class="s-servises__img-wrap bg-wrap">
+						<!-- /picture--></span>
+						<h3 class="s-servises__title">тонировка
+						</h3></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  ремонт стекол"><span class="s-servises__img-wrap bg-wrap">
 						<!-- picture-->
 						<picture class="lazy picture-bg"> 
 							<source srcset="#" data-srcset="img/@2x/servises-7.jpg" type="image/jpg" media="(min-width:576px)"/>
 							<source srcset="#" data-srcset="img/@1x/servises-7.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/servises-7.jpg" alt=""/>
 						</picture>
-						<!-- /picture--></span><span class="s-servises__title">ремонт стекол</span></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  ПРЕДПРОДАЖНАЯ ПОДГОТОВКА"> <span class="s-servises__img-wrap bg-wrap">
+						<!-- /picture--></span>
+						<h3 class="s-servises__title">ремонт стекол
+						</h3></a><a class="s-servises__col col-xl-3 col-md-4 col-6 link-modal" href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order="Заказать  ПРЕДПРОДАЖНАЯ ПОДГОТОВКА"><span class="s-servises__img-wrap bg-wrap">
 						<!-- picture-->
 						<picture class="lazy picture-bg"> 
 							<source srcset="#" data-srcset="img/@2x/servises-8.jpg" type="image/jpg" media="(min-width:576px)"/>
 							<source srcset="#" data-srcset="img/@1x/servises-8.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/servises-8.jpg" alt=""/>
 						</picture>
-						<!-- /picture--></span><span class="s-servises__title">ПРЕДПРОДАЖНАЯ ПОДГОТОВКА</span></a>
+						<!-- /picture--></span>
+						<h3 class="s-servises__title">ПРЕДПРОДАЖНАЯ ПОДГОТОВКА
+						</h3></a>
 					</div>
 				</div>
 			</section>
@@ -192,21 +241,23 @@
 			<!-- start s-promocode-->
 			<section class="s-promocode section" id="s-promocode">
 				<!-- picture-->
-				<picture class="lazy s-promocode__img-text"> 
+				<picture class="lazy s-promocode__img-text wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.24416s"> 
 					<source srcset="#" data-srcset="img/@2x/brook.png" type="image/png" media="(min-width:576px)"/>
 					<source srcset="#" data-srcset="img/@1x/brook.png" type="image/png"/><img src="#" data-src="img/@2x/brook.png" alt=""/>
 				</picture>
 				<!-- /picture-->
-				<div class="s-promocode__stock">-10%
+				<div class="s-promocode__stock wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.4929919999999999s">-10%
 				</div>
 				<div class="container">
 					<div class="s-promocode__block">
-						<div class="section-title">
+						<div class="section-title wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.6s">
 							<h2>промокод <span class="text-white">brook</span></h2>
 						</div>
-						<p>До&nbsp;31&nbsp;ноября 2019 по&nbsp;промокоду &laquo;BROOK&raquo; скидка&nbsp;10% на&nbsp;любую услугу.</p><a class="s-promocode__btn link-modal" href="#modal-call" data-title="Воспользоваться скидкой" data-btn="Отправить" data-order="Воспользоваться скидкой "> Воспользоваться скидкой</a>
+						<div class="wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.72s">
+							<p>До&nbsp;31&nbsp;ноября 2019 по&nbsp;промокоду &laquo;BROOK&raquo; скидка&nbsp;10% на&nbsp;любую услугу.</p>
+						</div><a class="s-promocode__btn link-modal wow fadeIn" href="#modal-call" data-title="Воспользоваться скидкой" data-btn="Отправить" data-order="Воспользоваться скидкой " data-wow-duration="0.3s" data-wow-delay="0.864s"> Воспользоваться скидкой</a>
 					</div>
-					<div class="s-promocode__right-block">
+					<div class="s-promocode__right-block wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.0368s">
 						<div class="s-promocode__img-wrap2">
 							<!-- picture-->
 							<picture class="lazy"> 
@@ -222,12 +273,12 @@
 			<!-- start s-cases-->
 			<section class="s-cases section" id="s-cases">
 				<div class="container">
-					<div class="section-title">
+					<div class="section-title wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.6s">
 						<h2>наши  <span class="text-primary">работы</span></h2>
 					</div>
 					<div class="tabs">
 						<div class="tabs__caption-wrap">
-							<div class="tabs__caption">
+							<div class="tabs__caption wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.72s">
 								<div class="tabs__btn active"><span>полировка кузова</span>
 								</div>
 								<div class="tabs__btn"><span>нанесение керамики</span>
@@ -246,9 +297,9 @@
 								</div>
 							</div>
 						</div>
-						<div class="tabs__hr">
+						<div class="tabs__hr wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.0368s">
 						</div>
-						<div class="tabs__wrap">
+						<div class="tabs__wrap wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.24416s">
 							<div class="tabs__content active">
 								<div class="row">
 									<div class="col-xl-3 col-md-4 col-6"><a class="tabs__img-wrap bg-wrap" href="img/@2x/gal-1.jpg">
@@ -967,16 +1018,16 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6">
-							<div class="section-title">
+							<div class="section-title wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.6s">
 								<h2> <span class="text-primary">лучшие </span>в&nbsp;своем деле</h2>
 							</div>
 							<div class="d-none d-md-block">
-								<div class="s-best__text"> Сертификат соответствия PCK.RU.0001.P392289
-								</div><a class="s-best__btn" href="#">открыть сертификат</a>
+								<div class="s-best__text wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.72s"> Сертификат соответствия PCK.RU.0001.P392289
+								</div><a class="s-best__btn wow fadeIn" href="#" data-wow-duration="0.3s" data-wow-delay="1.0368s">открыть сертификат</a>
 							</div>
 						</div>
 						<div class="col">
-							<div class="s-best__text-wrap">
+							<div class="s-best__text-wrap wow fadeIn" data-wow-duration="0.3s" data-wow-delay="1.24416s">
 								<p>Закончились месяцы подготовки, обучения, замеров и&nbsp;теперь наши услуги полностью соответствуют гос. стандартам и&nbsp;требованиям заводов изготавителей авто. Brooklyn стал единственным сертифицированным детейлинг центром в&nbsp;Оренбурге.</p>
 								<p> <strong>Сертифицированный детейлинг центр Brooklyn, доверяйте свой автомобиль официальным центрам.</strong></p>
 							</div>
@@ -992,10 +1043,10 @@
 			<!-- start s-materials-->
 			<section class="s-materials section" id="s-materials">
 				<div class="container">
-					<div class="section-title">
+					<div class="section-title wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.6s">
 						<h2>ПРОФЕССИОНАЛЬНЫЕ <span class="text-primary">МАТЕРИАЛЫ</span></h2>
 					</div>
-					<div class="row">
+					<div class="row wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.72s">
 						<div class="s-materials__col col-6"><img class="res-i lazy" src="#" data-src="img/@2x/logo-1.png" alt=""/>
 						</div>
 						<div class="s-materials__col col-6"><img class="res-i lazy" src="#" data-src="img/@2x/logo-2.png" alt=""/>
@@ -1034,8 +1085,8 @@
 			<div class="s-contact section bg-light" id="s-contact"> 
 				<div class="container">
 					<div class="s-contact__block">
-						<h2>контакты</h2>
-						<p>Россия, Оренбург, Шоссейная улица, 24</p><a class="link-tel" href="tel:+73532692725"> +7 3532 69 27 25</a><a class="s-contact__btn link-modal" href="#modal-call" data-title="Оставить заявку " data-btn="Оставить заявку" data-order="Оставить заявку в подвале ">Оставить заявку</a>
+						<h2 class="wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.6s">контакты</h2>
+						<p class="wow fadeIn" data-wow-duration="0.3s" data-wow-delay="0.72s">Россия, Оренбург, Шоссейная улица, 24</p><a class="link-tel wow fadeIn" href="tel:+73532692725" data-wow-duration="0.3s" data-wow-delay="0.864s"> +7 3532 69 27 25</a><a class="s-contact__btn link-modal wow fadeIn" href="#modal-call" data-title="Оставить заявку " data-btn="Оставить заявку" data-order="Оставить заявку в подвале " data-wow-duration="0.3s" data-wow-delay="1.0368s">Оставить заявку</a>
 					</div>
 				</div>
 				<div id="map"></div>
@@ -1046,7 +1097,7 @@
 					<div class="row">
 						<div class="col-sm-auto"><a class="footer__polite" href="#">политика конфиденциальности</a>
 						</div>
-						<div class="col-sm-auto"><a class="footer__dev" href="#">разработка сайта – <span>ishmetov</span></a>
+						<div class="col-sm-auto">разработка сайта – <a class="footer__dev" href="#">ishmetov</a>
 						</div>
 					</div>
 				</div>
@@ -1066,9 +1117,6 @@
 						</div>
 						<p>Заполните форму, мы&nbsp;свяжемся с&nbsp;Вами сразу как получим вашу заявку.</p>
 					</div>
-					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Введите имя" name="name" required="required"/> 
-					</div>
-					<!-- +e.input-wrap-->
 					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="+_(___)-___-__-__" name="tel" required="required"/>
 					</div>
 					<!-- +e.input-wrap-->
@@ -1094,6 +1142,7 @@
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="js/background-check.min.js"></script>
+		<script src="libs/wowjs/wow.min.js"></script>
 		<!-- полифил для picture-->
 		<script src="libs/picturefill/picturefill.min.js"></script>
 		<!-- полифил для object-fit-->

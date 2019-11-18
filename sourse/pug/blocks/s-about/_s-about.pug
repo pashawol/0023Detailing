@@ -3,16 +3,17 @@ mixin s-about()
 	+b.SECTION.s-about.section#s-about&attributes(attributes)
 		.container
 			+e.block
-				+b.section-title
-					h2 Детейлинг центр 
+				+b.section-title(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay}s`)
+					h1 Детейлинг центр 
 						| в&nbsp;Оренбурге &mdash;
 						span.text-primary Brooklyn
-				p Brooklyn&nbsp;&mdash; единственный сертифицированный детейлинг центр в&nbsp;Оренбурге. Мы&nbsp;реализуем комплексные проекты по&nbsp;детейлингу, оклейке автомобилей виниловыми и&nbsp;полиуретановыми пленками, тонировке, ремонту стекол и&nbsp;удалению вмятин без покраски.
+				div(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.2}s`)
+					p Brooklyn&nbsp;&mdash; единственный сертифицированный детейлинг центр в&nbsp;Оренбурге. Мы&nbsp;реализуем комплексные проекты по&nbsp;детейлингу, оклейке автомобилей виниловыми и&nbsp;полиуретановыми пленками, тонировке, ремонту стекол и&nbsp;удалению вмятин без покраски.
 
-				p Основа нашей работы это высокая культура оказания детейлинг услуг. Мы&nbsp;используем только профессиональные составы. Применяем высокие стандарты к&nbsp;персоналу.
+					p Основа нашей работы это высокая культура оказания детейлинг услуг. Мы&nbsp;используем только профессиональные составы. Применяем высокие стандарты к&nbsp;персоналу.
 
-				p Преобразите внешний вид вашего автомобиля вместе с&nbsp;Brooklyn.
+					p Преобразите внешний вид вашего автомобиля вместе с&nbsp;Brooklyn.
 			+e.img-wrap
-				+pic("s-about-img-2.png",'','lazy')(class="picture-2")
-				+pic("s-about-img-1.png",'','lazy')(class="picture-1")
+				+pic("s-about-img-2.png",'','')(class="picture-2"  class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.6 * 1.2 * 1.2}s` )
+				+pic("s-about-img-1.png",'','')(class="picture-1" class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * 1.6 * 1.2}s`)
 	// end s-about

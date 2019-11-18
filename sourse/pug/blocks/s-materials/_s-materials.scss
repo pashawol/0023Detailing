@@ -15,19 +15,31 @@
 		}
 	}
 	.row{
-		@include roww(20);
+		align-items: center;
+		@include media-breakpoint-up(md) {
+		@include roww(30);
+	}
+	@include roww(20);
 	}
 		&__col{
 			text-align: center;
 			// padding-left: 20px;
 			// padding-right: 20px;
+			min-height: rem(90);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			align-self: center;
+			img{
+				flex-shrink: 0;
+			}
 			@include media-breakpoint-up(md) {
 
 				flex: 0 0 20%;
 				max-width: 20%;
 			}
 
-			align-self: center;
+			// align-self: center;
 			@include media-breakpoint-up(xxl) {
 
 				margin-bottom: rem(120);
@@ -61,11 +73,25 @@
 	@include media-breakpoint-only(xl) {}
 	
 	//
-	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(xl) {
+		img{
+			max-width: 90%;
+			max-height: 90%;
+		}
+	}
 	@include media-breakpoint-down(lg) {}
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {
 		text-align: center;
+		&__col{
+			&:last-child{
+				display: none;
+			}
+			img{
+				max-width: 70%;
+			}
+		}
+		padding-bottom: 0 !important;
 	}
 	@include media-breakpoint-down(xs) {} 
 

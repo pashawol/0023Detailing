@@ -32,18 +32,33 @@
 			text-align: left;
 		}
 		text-align: center;
-		padding-top: rem(100);
-		padding-bottom: rem(100);
+		@include media-breakpoint-up(md) {
+
+			padding-top: rem(100);
+			padding-bottom: rem(100);
+		}
+		padding-top: rem(50);
+		padding-bottom: rem(50);
 		h2{
-			padding-bottom: rem(27);
-			font-family: "Text Book";
+			@include media-breakpoint-up(md) {
+
+				padding-bottom: rem(27);
+			}
+			// padding-bottom: rem(7);
+			font-family: "Text Book",   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		}
 		p{
 			@include rfs(rem(26));
-			margin-bottom: rem(40);
+			@include media-breakpoint-up(md) {
+
+				margin-bottom: rem(40);
+			}
 		}
 	}
 	#map{
+		@include media-breakpoint-up(xl) {
+			min-height: 100vh;
+		}
 		@include media-breakpoint-up(md) {
 
 			height: rem(750);
@@ -53,10 +68,14 @@
 	.link-tel{
 		@extend .h2;
 		font-weight: bold;
-		font-family: "Text Book";
+		font-family: "Text Book",   -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 		text-decoration: none !important;
 		display: inline-block;
-		margin-bottom: em(15);
+		@include media-breakpoint-up(md) {
+
+			margin-bottom: em(15);
+		}
+		margin-bottom: em(10);
 	}
 	&__btn{
 		@extend .btn;

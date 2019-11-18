@@ -3,29 +3,24 @@
 	left: 0;
 	top: 0;
 	z-index: 1000;
-	@include mt(.6);
-	@include media-breakpoint-up(xl) {
-	transform: translateX(0)  ;
-}
-@include media-breakpoint-up(xl)  {
-&.before-loaded{
-
-	transform: translateX(-100%)  ;
-}
+	@include mt(.3);
+	@include media-breakpoint-up(xl)  {
+		transform: translateX(0)   !important;
+		max-width: rem(293);
+		&.before-loaded{ 
+			transform: translateX(-100%)  !important ;
+		}
 }
 transform: translateX(-100%);
-@include media-breakpoint-up(xxl)  {
-
-	width: rem(293);
+@include media-breakpoint-up(xxl)  { 
+	max-width: rem(293);
 }
-@include media-breakpoint-up(md) {
-
-	width: rem(293 *.85);
+@include media-breakpoint-up(md) { 
+	max-width: rem(293 *.85);
 }
 width: 100%;
-&.active{
-
-	transform: translateX(0)  !important;
+&.active{ 
+	transform: translateX(0)   ;
 }
 
 	&__inner{

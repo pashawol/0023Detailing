@@ -37,10 +37,14 @@
 		background-position: center center;
 		-webkit-background-clip:text;
 		-webkit-text-fill-color: transparent;
+		@include media-breakpoint-up(md) {
+		background-image: url(../img/ezgifcom-optimize_5.gif);
+	}
 	}
 	&__title{
 		// @include rfs(rem(214));
 		@include media-breakpoint-up(xxl) {
+
 
 			font-size: rem(214);
 		}

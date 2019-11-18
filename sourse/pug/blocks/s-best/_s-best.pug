@@ -9,16 +9,16 @@ mixin s-best()
 				//- source(src="#" data-src='video/video.webm', type='video/webm')
 		.container
 			.row
-				.col-md-6
-					+b.section-title(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 0))}s`)
+				.col-md-6(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 0))}s`)
+					+b.section-title
 						h2 
 							span.text-primary лучшие 
 							| в&nbsp;своем деле
 					.d-none.d-md-block
-						+e.text(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 1))}s`)  Сертификат соответствия PCK.RU.0001.P392289
-						+e.btn(href="#"  class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 3))}s`) открыть сертификат
-				.col
-					+e.text-wrap(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 4))}s`)
+						+e.text Сертификат соответствия PCK.RU.0001.P392289
+						+e.btn(href="#"   ) открыть сертификат
+				.col(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 4))}s`)
+					+e.text-wrap
 						p Закончились месяцы подготовки, обучения, замеров и&nbsp;теперь наши услуги полностью соответствуют гос. стандартам и&nbsp;требованиям заводов изготавителей авто. Brooklyn стал единственным сертифицированным детейлинг центром в&nbsp;Оренбурге.
 
 						p 

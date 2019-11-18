@@ -57,7 +57,8 @@
 	}
 	#map{
 		@include media-breakpoint-up(xl) {
-			min-height: 100vh;
+			// min-height: 100vh;
+			height: rem(800);
 		}
 		@include media-breakpoint-up(md) {
 

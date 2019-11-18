@@ -8,9 +8,9 @@ mixin s-servises()
 				
 			-
 				var nav= ["полировка кузова","нанесение керамики","химчистка салона","антигравийная защита","РЕМОНТ ВМЯТИН БЕЗ ПОКРАСКИ","тонировка","ремонт стекол","ПРЕДПРОДАЖНАЯ ПОДГОТОВКА"] 
-			.row( class="wow fadeIn"   data-wow-duration=`${dur}s`  data-wow-delay=`${delay  *  1.1 }s`)
+			.row
 				each title in nav
-					+e.col.col-xl-3.col-md-4.col-6.link-modal(href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order=`Заказать  ${title}`)
+					+e.col.col-xl-3.col-md-4.col-6.link-modal(href="#modal-call" data-title="Заказать" data-btn="Заказать" data-order=`Заказать  ${title}`  class="wow fadeIn"   data-wow-duration=`${dur}s`  data-wow-delay=`${delay  *  1.1 }s`)
 						+e.img-wrap.bg-wrap
 							+pic(`servises-${(nav.indexOf(title) + 1)}.jpg`,'bg')(class="picture-bg")
 						+e.H3.title= title

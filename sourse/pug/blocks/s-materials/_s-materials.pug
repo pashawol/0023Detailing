@@ -5,8 +5,8 @@ mixin s-materials()
 			+b.section-title(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 0))}s`)
 					h2 ПРОФЕССИОНАЛЬНЫЕ 
 						span.text-primary МАТЕРИАЛЫ
-			.row(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 1))}s`)
+			.row
 				- for (var x = 1; x <= 15; x++)
-					+e.col.col-6
+					+e.col.col-6(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 1))}s`)
 						img.res-i.lazy(src="#" data-src=`img/@2x/logo-${x}.png`, alt="") 
 	// end s-materials

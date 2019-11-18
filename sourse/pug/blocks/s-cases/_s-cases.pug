@@ -27,12 +27,12 @@ mixin s-cases()
 						+e.btn
 							span предпродажная подготовка
 				+e.hr(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 3))}s`)
-				+e.wrap( class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 4))}s`)
+				+e.wrap
 					mixin cont()
 						+e.content&attributes(attributes)
 							.row
 								- for (var x = 1; x <= 12; x++)
-									.col-xl-3.col-md-4.col-6
+									.col-xl-3.col-md-4.col-6( class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 4))}s`)
 										+e.img-wrap.bg-wrap(href=`img/@2x/gal-${x}.jpg`)
 											+pic(`gal-${x}.jpg`,'bg')(class="picture-bg")
 										

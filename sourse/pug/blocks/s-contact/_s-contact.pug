@@ -3,10 +3,11 @@ mixin s-contact()
 	+b.s-contact.section.bg-light#s-contact&attributes(attributes) 
 		.container
 			+e.block
-				h2(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 0))}s`) контакты
-				p(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 1))}s`) Россия, Оренбург, Шоссейная улица, 24
-				+link-tel()(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 2))}s`)
-				+e.btn.link-modal(href="#modal-call" data-title="Оставить заявку " data-btn="Оставить заявку" data-order=`Оставить заявку в подвале ` class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay * (Math.pow(1.2 , 3))}s`) Оставить заявку
+				div(class="wow fadeIn" data-wow-duration=`${dur}s`  data-wow-delay=`${delay }s`)
+					h2 контакты
+					p Россия, Оренбург, Шоссейная улица, 24
+					+link-tel()
+					+e.btn.link-modal(href="#modal-call" data-title="Оставить заявку " data-btn="Оставить заявку" data-order=`Оставить заявку в подвале `) Оставить заявку
 		#map
 		//- script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?key=key=AIzaSyCnoRp8wBQeCZLL8k4R-vckP_wDGVR2k10&callback=initMap')
 		

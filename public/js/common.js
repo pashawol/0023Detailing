@@ -148,14 +148,16 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	$('.before-load').find('img').fadeOut().parent().delay(400).fadeOut('slow', function () {
-		$("body").removeClass("before-loaded");
-		$(".aside--js").removeClass("before-loaded");
-		var wow = new WOW({
-			mobile: false
+	setTimeout(function () {
+		$('.before-load').find('img').fadeOut().parent().delay(400).fadeOut('slow', function () {
+			$("body").removeClass("before-loaded");
+			$(".aside--js").removeClass("before-loaded");
+			var wow = new WOW({
+				mobile: false
+			});
+			wow.init();
 		});
-		wow.init();
-	}); // полифил для object-fit
+	}, 1000); // полифил для object-fit
 
 	objectFitImages(); // Picture element HTML5 shiv
 

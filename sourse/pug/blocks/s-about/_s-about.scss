@@ -56,6 +56,9 @@
 		max-width: 100%; 
 		}
 	}
+	.section-title{
+		max-width: em(160);
+	}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
